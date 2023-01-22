@@ -1,19 +1,24 @@
-import { useState } from 'react'
-import styles from './App.module.css'
+import { FC } from "react";
+import { Routes, Route, Link, Outlet } from "react-router-dom";
+import styles from "./App.module.css";
+import { Home } from "./pages/Home";
+import { Page1 } from "./pages/Page1";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App: FC = () => {
   return (
     <div>
       <h1 className={styles.title}>Child React App Created By Vite</h1>
       <div>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <Link to="/">Home</Link>
+        <Link to="/page1">Page1</Link>
       </div>
+      <Outlet />
+      {/* <Routes>
+        <Route path="/react-app/" element={<Home />} />
+        <Route path="/react-app/page1" element={<Page1 />} />
+      </Routes> */}
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

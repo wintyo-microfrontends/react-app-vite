@@ -1,18 +1,32 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, RouterProvider } from "react-router-dom";
+import { router } from "./router";
+import App from "./App";
+import { ExternalRouteProvider } from "./context/ExternalRoute";
 
-export const mount = (elRoot: HTMLElement) => {
-  console.log('mount react-app')
-  const root = ReactDOM.createRoot(elRoot)
+export type MountProps = {
+  elRoot: HTMLElement;
+  externalRoute: (path: string) => void;
+};
+
+export const mount = (props: MountProps) => {
+  const { externalRoute } = props;
+  console.log("mount react-app");
+  const root = ReactDOM.createRoot(props.elRoot);
   root.render(
     <React.StrictMode>
-      <App />
+      <ExternalRouteProvider value={{ externalRoute }}>
+        {/* <BrowserRouter>
+          <App />
+        </BrowserRouter> */}
+        <RouterProvider router={router} />
+      </ExternalRouteProvider>
     </React.StrictMode>
-  )
+  );
 
   return () => {
-    console.log('unmount react-app')
-    root.unmount()
-  }
-}
+    console.log("unmount react-app");
+    root.unmount();
+  };
+};
