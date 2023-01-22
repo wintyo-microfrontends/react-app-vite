@@ -1,13 +1,12 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import styles from './App.module.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div>
-      <h1>Child React App Created By Vite</h1>
+      <h1 className={styles.title}>Child React App Created By Vite</h1>
       <div>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
