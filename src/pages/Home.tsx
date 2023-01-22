@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 
-export const Home: FC = () => {
+const Home: FC = () => {
   const [count, setCount] = useState(0);
   return (
     <div>
@@ -10,3 +10,5 @@ export const Home: FC = () => {
     </div>
   );
 };
+
+export default Home;

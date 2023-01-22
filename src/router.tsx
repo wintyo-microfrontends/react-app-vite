@@ -1,7 +1,16 @@
+import { FC, lazy, Suspense, LazyExoticComponent } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import { Home } from "./pages/Home";
-import { Page1 } from "./pages/Page1";
+
+const SuspensePage: FC<{ lazyComponent: LazyExoticComponent<FC<{}>> }> = (
+  props
+) => {
+  return (
+    <Suspense fallback={<div>loading...</div>}>
+      <props.lazyComponent />
+    </Suspense>
+  );
+};
 
 export const router = createBrowserRouter(
   [
@@ -11,16 +20,20 @@ export const router = createBrowserRouter(
       children: [
         {
           path: "",
-          element: <Home />,
+          element: (
+            <SuspensePage lazyComponent={lazy(() => import("./pages/Home"))} />
+          ),
         },
         {
           path: "page1",
-          element: <Page1 />,
+          element: (
+            <SuspensePage lazyComponent={lazy(() => import("./pages/Page1"))} />
+          ),
         },
       ],
     },
   ],
   {
-    basename: "/react-app",
+    basename: "/react-app/",
   }
 );

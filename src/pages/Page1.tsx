@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useExternalRoute } from "../context/ExternalRoute";
 
-export const Page1: FC = () => {
+const Page1: FC = () => {
   const { externalRoute } = useExternalRoute();
   return (
     <div>
@@ -21,3 +21,5 @@ export const Page1: FC = () => {
     </div>
   );
 };
+
+export default Page1;
