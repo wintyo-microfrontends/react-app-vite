@@ -1,0 +1,1 @@
+import{u as n,j as o,a as r}from"./index-357b3017.js";const l=()=>{const{externalRoute:a}=n();return o("div",{children:["Page1",r("br",{}),r("a",{href:"/",onClick:e=>{e.preventDefault();const t=e.target.getAttribute("href");t&&a(t)},children:"External TOP"})]})};export{l as default};
