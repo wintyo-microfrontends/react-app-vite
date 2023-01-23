@@ -12,28 +12,33 @@ const SuspensePage: FC<{ lazyComponent: LazyExoticComponent<FC<{}>> }> = (
   );
 };
 
-export const router = createBrowserRouter(
-  [
+export const createRouter = () =>
+  createBrowserRouter(
+    [
+      {
+        path: "",
+        element: <App />,
+        children: [
+          {
+            path: "",
+            element: (
+              <SuspensePage
+                lazyComponent={lazy(() => import("./pages/Home"))}
+              />
+            ),
+          },
+          {
+            path: "page1",
+            element: (
+              <SuspensePage
+                lazyComponent={lazy(() => import("./pages/Page1"))}
+              />
+            ),
+          },
+        ],
+      },
+    ],
     {
-      path: "",
-      element: <App />,
-      children: [
-        {
-          path: "",
-          element: (
-            <SuspensePage lazyComponent={lazy(() => import("./pages/Home"))} />
-          ),
-        },
-        {
-          path: "page1",
-          element: (
-            <SuspensePage lazyComponent={lazy(() => import("./pages/Page1"))} />
-          ),
-        },
-      ],
-    },
-  ],
-  {
-    basename: "/react-app/",
-  }
-);
+      basename: "/react-app/",
+    }
+  );

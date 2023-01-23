@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
-import { router } from "./router";
+import { createRouter } from "./router";
 import { ExternalRouteProvider } from "./context/ExternalRoute";
 
 export type MountProps = {
@@ -13,6 +13,7 @@ export const mount = (props: MountProps) => {
   const { externalRoute } = props;
   console.log("mount react-app");
   const root = ReactDOM.createRoot(props.elRoot);
+  const router = createRouter();
   root.render(
     <React.StrictMode>
       <ExternalRouteProvider value={{ externalRoute }}>
