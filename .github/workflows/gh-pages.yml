@@ -22,6 +22,12 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Build Lib
+        run: yarn lib:build
+
+      - name: Copy Lib to Dist
+        run: cp dist-lib/react-app-vite/* dist
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
