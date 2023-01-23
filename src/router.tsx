@@ -39,6 +39,6 @@ export const createRouter = () =>
       },
     ],
     {
-      basename: "/react-app/",
+      basename: "/react-app-vite/",
     }
   );

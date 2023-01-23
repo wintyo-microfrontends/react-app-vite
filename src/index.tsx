@@ -11,7 +11,7 @@ export type MountProps = {
 
 export const mount = (props: MountProps) => {
   const { externalRoute } = props;
-  console.log("mount react-app");
+  console.log("mount react-app-vite");
   const root = ReactDOM.createRoot(props.elRoot);
   const router = createRouter();
   root.render(
@@ -23,7 +23,7 @@ export const mount = (props: MountProps) => {
   );
 
   return () => {
-    console.log("unmount react-app");
+    console.log("unmount react-app-vite");
     root.unmount();
   };
 };
