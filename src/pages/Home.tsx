@@ -4,7 +4,8 @@ const Home: FC = () => {
   const [count, setCount] = useState(0);
   return (
     <div>
-      <img src="/react-app-vite/vite.svg" />
+      {/* ローカル開発とパスが合わなくなるのでpublicは使いづらそう */}
+      <img src="/react-app-vite/lib/vite.svg" />
       <br />
       <button onClick={() => setCount((count) => count + 1)}>
         count is {count}
