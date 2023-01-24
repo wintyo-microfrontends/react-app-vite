@@ -4,27 +4,27 @@
     "src": "src/index.tsx",
     "isEntry": true,
     "imports": [
-      "_index-478c3e48.js"
-    ]
-  },
-  "src/pages/Page1.tsx": {
-    "file": "Page1-5aadee54.js",
-    "src": "src/pages/Page1.tsx",
-    "isDynamicEntry": true,
-    "imports": [
-      "_index-478c3e48.js"
+      "_index-06f13810.js"
     ]
   },
   "src/pages/Home.tsx": {
-    "file": "Home-8aa0c659.js",
+    "file": "Home-cb9cf529.js",
     "src": "src/pages/Home.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_index-478c3e48.js"
+      "_index-06f13810.js"
     ]
   },
-  "_index-478c3e48.js": {
-    "file": "index-478c3e48.js",
+  "src/pages/Page1.tsx": {
+    "file": "Page1-6a915137.js",
+    "src": "src/pages/Page1.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-06f13810.js"
+    ]
+  },
+  "_index-06f13810.js": {
+    "file": "index-06f13810.js",
     "dynamicImports": [
       "src/pages/Home.tsx",
       "src/pages/Page1.tsx"

@@ -1,0 +1,1 @@
+import{u as s,j as c,a as e}from"./index-b1a98737.js";const n="/react-app-vite/assets/react-35ef61ed.svg",i=()=>{const{externalRoute:a}=s();return c("div",{children:["Page1",e("br",{}),e("img",{src:n,alt:""}),e("br",{}),e("a",{href:"/",onClick:t=>{t.preventDefault();const r=t.target.getAttribute("href");r&&a(r)},children:"External TOP"})]})};export{i as default};

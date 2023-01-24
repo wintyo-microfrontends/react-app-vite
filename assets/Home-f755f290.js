@@ -1,0 +1,1 @@
+import{r as a,j as t,a as s}from"./index-b1a98737.js";const i=()=>{const[e,r]=a.useState(0);return t("div",{children:[s("img",{src:"/react-app-vite/lib/vite.svg"}),s("br",{}),t("button",{onClick:()=>r(o=>o+1),children:["count is ",e]})]})};export{i as default};
